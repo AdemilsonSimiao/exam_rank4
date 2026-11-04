@@ -1,5 +1,10 @@
 def merge_sorted_lists(lists: list[list[int]]) -> list[int]:
-    return list[list + list]
+    result = []
+    for lst in lists:
+        if lst:
+            result.extend(lst)
+        result.sort()
+    return result
 
 # Write a function that merges multiple sorted lists into one sorted list while maintaining the sort order efficiently.
 
