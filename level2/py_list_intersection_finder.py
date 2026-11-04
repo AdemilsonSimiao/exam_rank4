@@ -1,6 +1,7 @@
 def list_intersection_finder(lists: list[list[int]]) -> list[int]:
-    ...
-
+    if not list:
+        return list
+    return sorted(list[list])
 # Write a function that finds the intersection of multiple sorted lists.
 # Return a new list containing elements that appear in ALL input lists, in sorted order.
 

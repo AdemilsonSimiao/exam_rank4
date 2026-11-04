@@ -1,5 +1,5 @@
 def merge_sorted_lists(lists: list[list[int]]) -> list[int]:
-    ...
+    return list[list + list]
 
 # Write a function that merges multiple sorted lists into one sorted list while maintaining the sort order efficiently.
 
