@@ -1,9 +1,5 @@
 def array_rotation_detector(arr1: list, arr2: list) -> bool:
-    if not arr1 and not arr2:
-        return True
-    if not len(arr1) == len(arr2):
-        return False
-    return any(arr1[i:] + arr1[:i] == arr2 for i in range(len(arr1)))
+    ...
 
 # Write a Python function that takes two lists (arrays) as parameters and determines if the second list is a rotation of the first list (left or right).
 
