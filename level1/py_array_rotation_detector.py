@@ -1,6 +1,8 @@
 def array_rotation_detector(arr1: list, arr2: list) -> bool:
     ...
 
+print(array_rotation_detector([1, 2, 3, 4, 5], [4, 5, 1, 2, 3]))
+
 # Write a Python function that takes two lists (arrays) as parameters and determines if the second list is a rotation of the first list (left or right).
 
 # A rotation means that the elements are shifted circularly. For example, shifting [1, 2, 3] to the right by one position results in [3, 1, 2].

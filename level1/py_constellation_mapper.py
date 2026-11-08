@@ -1,5 +1,7 @@
-def constellation_mapper(stars: list[tuple[int, int]], dim: int) -> list[str]:
+def constellation_mapper(stars: list[tuple[int, int]], size: int) -> list[str]:
     ...
+
+print(constellation_mapper([(0, 0), (1, 1), (2, 2)], 3))
 
 # Write a function that maps a constellation of stars onto a grid and returns the visual representation as a list of strings.
 

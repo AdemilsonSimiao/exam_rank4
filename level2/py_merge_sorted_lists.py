@@ -1,6 +1,7 @@
 def merge_sorted_lists(lists: list[list[int]]) -> list[int]:
     ...
 
+print(merge_sorted_lists([[1, 3, 5], [2, 4, 6]]))
 # Write a function that merges multiple sorted lists into one sorted list while maintaining the sort order efficiently.
 
 # The function should:

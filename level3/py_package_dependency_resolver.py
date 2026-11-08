@@ -1,25 +1,18 @@
 def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]:
-   dependencies = {
-      pck: set(deps) & packages.keys()
-      for pck, deps in packages.items()
-   }
-   dependents = {pck: [] for pck in packages}
-   for pck, deps in dependencies.items():
-      for dep in deps:
-         dependents[dep].append(pck)
-   ready = sorted(
-      pck for pck, deps in dependencies.items()
-      if not deps
-   )
+   resolved = set()
    order = []
-   while ready:
-      pck = ready.pop(0)
-      order.append(pck)
-      for dependent in sorted(dependents[pck]):
-         dependencies[dependent].remove(pck)
-         if not dependencies[dependent]:
-            ready.append(dependent)
-   return order if len(order) == len(packages) else []
+   while len(order) < len(packages):
+      ready = sorted(
+         pck for pck, deps in packages.items()
+         if pck not in resolved and set(deps) <= resolved
+      )
+      if not ready:
+         return []
+      order += ready
+      resolved.update(ready)
+   return order
+
+print(package_dependency_resolver({"app": ["database"], "database": ["driver"], "driver": []}))
 
 # Write a function that determines a valid package installation order by resolving dependencies. Use topological sorting to ensure dependencies are installed before the packages that require them.
 
