@@ -2,7 +2,8 @@ def palindrome_partitioner(s: str) -> int:
     ...
 # Given a string `s`, find the minimum number of cuts needed to partition it such that every resulting substring is a palindrome.
 
-# A cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings. We want the minimum number of cuts `c` such that all parts are palindromes.
+# A cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings.
+# We want the minimum number of cuts `c` such that all parts are palindromes.
 
 # Return this minimum number of cuts (an integer).
 

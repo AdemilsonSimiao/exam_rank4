@@ -1,7 +1,9 @@
 def sliding_window_maximum(nums: list[int], k: int) -> list[int]:
     ...
-    
-# Write a function that finds the maximum element in each sliding window of size k in an array. Return a list of maximums for each window position.
+
+print(sliding_window_maximum([1, 3, -1, -3, 5, 3, 6, 7], 3))
+# Write a function that finds the maximum element in each sliding window of size k in an array.
+# Return a list of maximums for each window position.
 
 # The function should:
 # - Slide a window of size k through the array

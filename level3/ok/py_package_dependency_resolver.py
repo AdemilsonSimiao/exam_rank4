@@ -1,15 +1,15 @@
 def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]:
-    done = set()
+    resolved = set()
     order = []
     while len(order) < len(packages):
         ready = sorted(
             pck for pck, deps in packages.items()
-            if pck not in done and set(deps) <= done
+            if pck not in resolved and set(deps) <= resolved
         )
         if not ready:
             return []
         order += ready
-        done.update(ready)
+        resolved.update(ready)
     return order
 
 print(package_dependency_resolver({"app": ["database"], "database": ["driver"], "driver": []}))
