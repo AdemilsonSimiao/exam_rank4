@@ -1,5 +1,14 @@
 def palindrome_partitioner(s: str) -> int:
-    ...
+    if s == s[::-1]:
+        return 0
+    return min(
+        1 + palindrome_partitioner(s[i:])
+        for i in range(1, len(s))
+        if s[:i] == s[:i][::-1]
+    )
+
+print(palindrome_partitioner("aab"))
+
 # Given a string `s`, find the minimum number of cuts needed to partition it such that every resulting substring is a palindrome.
 
 # A cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings.

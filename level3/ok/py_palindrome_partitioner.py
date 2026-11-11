@@ -1,28 +1,18 @@
 def palindrome_partitioner(s: str) -> int:
-    n = len(s)
-    if n < 2:
+    if s == s[::-1]:
         return 0
-    pal = [[False] * n for _ in range(n)]
-    cuts = [0] * n
-    for end in range(n):
-        best = end
-        for start in range(end + 1):
-            is_palindrome = (
-                s[start] == s[end]
-                and (end - start <= 1 or pal[start + 1][end - 1])
-            )
-            if is_palindrome:
-                pal[start][end] = True
-                if start == 0:
-                    best = 0
-                else:
-                    best = min(best, cuts[start - 1] + 1)
-        cuts[end] = best
-    return cuts[-1]
+    return min(
+        1 + palindrome_partitioner(s[i:])
+        for i in range(1, len(s))
+        if s[:i] == s[:i][::-1]
+    )
+
+print(palindrome_partitioner("aab"))
 
 # Given a string `s`, find the minimum number of cuts needed to partition it such that every resulting substring is a palindrome.
 
-# A cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings. We want the minimum number of cuts `c` such that all parts are palindromes.
+# A cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings.
+# We want the minimum number of cuts `c` such that all parts are palindromes.
 
 # Return this minimum number of cuts (an integer).
 
